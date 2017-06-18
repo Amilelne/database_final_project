@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    h1= title
+    form#formAddAccidentEvent(name='accident event', method='post',action='/show')
+        input#inputAccidentId(type="text", placeholder="accident id", name="accident id")
+        input#inputItemNo(type="text", placeholder="item no", name="item no")
+        input#inputSensorLatitude(type="text", placeholder="sensor latitude", name="sensor latitude")
+        input#inputSensorLongtitude(type="text", placeholder="sensor longtitude", name="sensor longtitude")
+        input#inputAccidentStatus(type="text", placeholder="accident status", name="accident status")
+        input#inputRoadId(type="text", placeholder="road id", name="road id")
+        input#inputRoadDirection(type="text", placeholder="road direction", name="road direction")
+        input#inputMilage(type="text", placeholder="milage", name="milage")
+        input#inputRoadType(type="text", placeholder="road type", name="road type")
+        input#inputRoadSectionName(type="text", placeholder="road section name", name="road section name")
+        button#btnSubmit(type="submit") submit
