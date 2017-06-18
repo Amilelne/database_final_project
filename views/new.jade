@@ -2,7 +2,7 @@ extends layout
 
 block content
     h1= title
-    form#formAddAccidentEvent(name='accident event', method='post',action='/show')
+    form#formAddAccidentEvent(name='accident event', method='post',action='/new')
         input#inputAccidentId(type="text", placeholder="accident id", name="accident id")
         input#inputItemNo(type="text", placeholder="item no", name="item no")
         input#inputSensorLatitude(type="text", placeholder="sensor latitude", name="sensor latitude")

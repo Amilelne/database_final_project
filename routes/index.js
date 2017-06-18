@@ -19,13 +19,14 @@ router.get('/', function(req, res, next) {
             if (err) {
                 return console.error('error happened during query', err)
             }
+            console.log(util.inspect(result.rows,null,null))
             res.send(result.rows,200)
             //process.exit(0)
         })
     })
 });
 
-router.get('/userlist', function (req, res) {
+router.get('/acc_event', function (req, res) {
     pg.connect(conString, function (err, client, done) {
         if (err) {
             return console.error('error fetching client from pool', err)
@@ -42,27 +43,11 @@ router.get('/userlist', function (req, res) {
 });
 
 /* GET New User page */
-router.get('/newuser', function(req, res){
-    res.render('newuser', {title: 'Add New User'});
+router.get('/new', function(req, res){
+    res.render('new', {title: 'Add New User'});
 });
 
-
-router.post('/newuser',function (req,res) {
-    pg.connect(perString, function (err, client, done) {
-        if (err) {
-            return console.error('error fetching client from pool', err)
-        }
-        client.query('SELECT * from accident_status_information', function (err, result) {
-            done()
-
-            if (err) {
-                return console.error('error happened during query', err)
-            }
-            res.send(result.rows[0],200)
-        })
-    })
-})
-router.post('/show',function (req,res) {
+router.post('/new',function (req,res) {
     pg.connect(conString, function (err, client, done) {
         if (err) {
             return console.error('error fetching client from pool', err)
