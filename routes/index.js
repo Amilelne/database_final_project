@@ -99,8 +99,8 @@ router.post('/new',function (req,res) {
     })
 })
 
-router.get('/getres',function (err,res) {
-    res.render('getres', {title: 'Add Response Unit'});
+router.get('/response',function (err,res) {
+    res.render('response', {title: 'Add Response Unit'});
 })
 
 router.post('/response',function (err,res) {
