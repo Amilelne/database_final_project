@@ -103,7 +103,7 @@ router.get('/response',function (err,res) {
     res.render('response', {title: 'Add Response Unit'});
 })
 
-router.post('/response',function (err,res) {
+router.post('/response',function (req,res) {
     pg.connect(conString, function (err, client, done) {
         if (err) {
             return console.error('error fetching client from pool', err)
@@ -126,7 +126,7 @@ router.post('/response',function (err,res) {
             client.query('SELECT * FROM response_unit',function (err,result) {
                 done();
                 query_result = result.rows
-                //res.send(result.rows);
+                res.send(result.rows);
             })
 
         })
