@@ -1,0 +1,9 @@
+extends layout
+
+block content
+    h1= title
+    form#formUpdateAccidentEvent(name='update accident event', method='post',action='/update')
+        input#inputAccidentId(type="text", placeholder="accident id", name="accident id")
+        input#inputActualLatitude(type="text", placeholder="actual latitude", name="actual latitude")
+        input#inputActualLongitude(type="text", placeholder="actual longitude", name="actual longitude")
+        button#btnSubmit(type="submit") submit

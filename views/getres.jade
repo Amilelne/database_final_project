@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    h1= title
+    form#formAddResponseUnit(name='response unit', method='post',action='/response')
+        input#inputResponseId(type="text", placeholder="response id", name="response id")
+        input#inputAccidentId(type="text", placeholder="accident id", name="accident id")
+        input#inputItemNo(type="text", placeholder="item no", name="item no")
+        input#inputResponsePoliceStation(type="text", placeholder="response police station", name="response police station")
+        input#inputResponseHealthCenters(type="text", placeholder="response health centers", name="response health centers")
+        input#inputRoadId(type="text", placeholder="road id", name="road id")
+        input#inputRoadDirection(type="text", placeholder="road direction", name="road direction")
+        input#inputMilage(type="text", placeholder="milage", name="milage")
+        button#btnSubmit(type="submit") submit
