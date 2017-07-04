@@ -5,11 +5,11 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 const pg = require('pg')
-const conString = 'postgres://db7:db007@140.114.77.23/db7' // make sure to match your own database's credentials
-const perString = 'postgres://db8:db008@140.114.77.23/db8'
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var register = require('./routes/register')
+var login  = require('./routes/login')
 
 var app = express();
 
@@ -27,6 +27,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/register',register)
+app.use('/login',login)
 
 
 // catch 404 and forward to error handler
